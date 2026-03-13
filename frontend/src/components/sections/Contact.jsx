@@ -60,14 +60,14 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_18x6ton", // your service ID
-        "template_6mfgwbh", // your template ID
+        "service_18x6ton",
+        "template_6mfgwbh",
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        "tbxl0HO8CFmUeRFyu", // your EmailJS public key
+        "tbxl0HO8CFmUeRFyu"
       )
       .then(() => {
         alert("Message Sent Successfully!");
@@ -196,54 +196,59 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* ================= SOCIAL LINKS ================= */}
+        {/* ================= SOCIAL LINKS (NEW ANIMATED VERSION) ================= */}
         <div className="text-center">
           <h3 className="text-lg font-semibold mb-6">Connect With Me</h3>
 
           <div className="flex justify-center gap-6 flex-wrap">
+            {/* GitHub */}
             <a
               href="https://github.com/Priyanshu7354"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 hover:scale-110"
+              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 animate-[pulse-glow_2.5s_ease-in-out_infinite] hover:scale-110 hover:drop-shadow-[0_0_18px_rgba(147,51,234,0.9)]"
             >
-              <FaGithub className="text-xl" />
+              <FaGithub className="text-xl text-gray-800 dark:text-white group-hover:rotate-12 group-hover:scale-125 transition-transform" />
             </a>
 
+            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/priyanshu-bhatnagar45/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 hover:scale-110"
+              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 animate-[pulse-glow_2.5s_ease-in-out_infinite] hover:scale-110 hover:drop-shadow-[0_0_18px_rgba(37,99,235,0.9)]"
             >
-              <FaLinkedin className="text-xl text-blue-600" />
+              <FaLinkedin className="text-xl text-blue-600 group-hover:rotate-12 group-hover:scale-125 transition-transform" />
             </a>
 
+            {/* LeetCode */}
             <a
               href="https://leetcode.com/u/pbhatnagar631/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 hover:scale-110"
+              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 animate-[pulse-glow_2.5s_ease-in-out_infinite] hover:scale-110 hover:drop-shadow-[0_0_18px_rgba(249,115,22,0.9)]"
             >
-              <SiLeetcode className="text-xl text-orange-500" />
+              <SiLeetcode className="text-xl text-orange-500 group-hover:rotate-12 group-hover:scale-125 transition-transform" />
             </a>
 
+            {/* GeeksforGeeks */}
             <a
               href="https://auth.geeksforgeeks.org/user/pbhatnagar"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 hover:scale-110"
+              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 animate-[pulse-glow_2.5s_ease-in-out_infinite] hover:scale-110 hover:drop-shadow-[0_0_18px_rgba(34,197,94,0.9)]"
             >
-              <SiGeeksforgeeks className="text-xl text-green-600" />
+              <SiGeeksforgeeks className="text-xl text-green-600 group-hover:rotate-12 group-hover:scale-125 transition-transform" />
             </a>
 
+            {/* Instagram */}
             <a
               href="https://www.instagram.com/priyanshu_bhatnagar_/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 hover:scale-110"
+              className="group w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border dark:border-gray-700 animate-[pulse-glow_2.5s_ease-in-out_infinite] hover:scale-110 hover:drop-shadow-[0_0_18px_rgba(236,72,153,0.9)]"
             >
-              <FaInstagram className="text-xl text-pink-500" />
+              <FaInstagram className="text-xl text-pink-500 group-hover:rotate-12 group-hover:scale-125 transition-transform" />
             </a>
           </div>
         </div>
