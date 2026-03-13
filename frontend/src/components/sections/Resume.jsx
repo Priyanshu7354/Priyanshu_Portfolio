@@ -20,7 +20,7 @@ export default function Resume() {
         </p>
         <div className="flex gap-4">
           <a
-            href="/Priyanshu.pdf"
+           href={`${import.meta.env.BASE_URL}Priyanshu.pdf`}
             download
             className="
               px-6 py-3 bg-indigo-600 text-white rounded-lg shadow
@@ -31,7 +31,7 @@ export default function Resume() {
             📄 Download Resume
           </a>
           <a
-            href="/Priyanshu.pdf"
+            href={`${import.meta.env.BASE_URL}Priyanshu.pdf`}
             target="_blank"
             className="
               px-6 py-3 bg-gray-200 dark:bg-gray-700 rounded-lg shadow
