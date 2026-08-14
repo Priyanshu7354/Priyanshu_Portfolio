@@ -89,8 +89,9 @@ export default function Experience() {
                   <FiBriefcase className="text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                    {exp.role} <span className="text-sm font-semibold text-indigo-500">@ {exp.company}</span>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <span>{exp.role}</span>
+                    <span className="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400">@ {exp.company}</span>
                   </h3>
                   <div className="flex flex-wrap items-center gap-4 mt-1 text-xs text-gray-500 dark:text-gray-400 font-medium">
                     <span className="flex items-center gap-1"><FiMapPin className="text-indigo-400" /> {exp.location}</span>

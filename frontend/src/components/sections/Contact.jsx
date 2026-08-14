@@ -421,7 +421,7 @@ export default function Contact() {
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-4">
                   <FaEnvelope className="text-indigo-500" aria-hidden="true" />
-                  <span className="font-medium">
+                  <span className="font-medium text-xs sm:text-base break-all sm:break-normal">
                     pbhatnagar631@gmail.com
                   </span>
                 </div>
@@ -485,7 +485,7 @@ export default function Contact() {
           </div>
 
           {/* -------- Contact Form -------- */}
-          <div className="p-10 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white border border-white/10 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+          <div className="p-6 sm:p-10 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white border border-white/10 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
             <h3 className="text-2xl font-semibold mb-4 text-center">
               Send Me a Message
             </h3>

@@ -306,7 +306,7 @@ export default function ProjectModal({ project, onClose }) {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
           onClick={onClose}
           aria-hidden="false"
         >
@@ -323,12 +323,12 @@ export default function ProjectModal({ project, onClose }) {
             onClick={(e) => e.stopPropagation()}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto overscroll-contain bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl border border-gray-200/60 dark:border-white/[0.08] shadow-2xl focus:outline-none"
+            className="relative w-full max-w-3xl max-h-[92vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl border border-gray-200/60 dark:border-white/[0.08] shadow-2xl focus:outline-none"
           >
             {/* Close button */}
             <button
               onClick={onClose}
-              className="sticky top-4 float-right mr-4 z-20 p-2.5 rounded-xl bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-white/[0.1] backdrop-blur-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.1] shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              className="sticky top-3 float-right mr-3 sm:mr-4 z-20 p-2 sm:p-2.5 rounded-xl bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-white/[0.1] backdrop-blur-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.1] shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
               aria-label="Close project details"
             >
               <FiX className="text-lg" />
@@ -339,7 +339,7 @@ export default function ProjectModal({ project, onClose }) {
               variants={contentStagger}
               initial="hidden"
               animate="visible"
-              className="p-6 sm:p-8 space-y-7"
+              className="p-4 sm:p-8 space-y-5 sm:space-y-7"
             >
               {/* Header */}
               <motion.div variants={contentItem} className="space-y-3 pr-12">
@@ -403,13 +403,13 @@ export default function ProjectModal({ project, onClose }) {
               ))}
 
               {/* Action buttons */}
-              <motion.div variants={contentItem} className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+              <motion.div variants={contentItem} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 shadow-lg shadow-gray-900/10 dark:shadow-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500"
+                    className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 shadow-lg shadow-gray-900/10 dark:shadow-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 w-full sm:w-auto"
                     aria-label={`View ${project.title} source code on GitHub`}
                   >
                     <FiGithub className="text-base transition-transform group-hover:scale-110" aria-hidden="true" />
@@ -418,7 +418,7 @@ export default function ProjectModal({ project, onClose }) {
                 )}
 
                 {project.githubNote && !project.github && (
-                  <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/[0.06] px-4 py-2.5 rounded-xl border border-gray-200 dark:border-white/[0.08]">
+                  <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/[0.06] px-4 py-2.5 rounded-xl border border-gray-200 dark:border-white/[0.08] text-center w-full sm:w-auto">
                     ℹ️ {project.githubNote}
                   </span>
                 )}
@@ -428,7 +428,7 @@ export default function ProjectModal({ project, onClose }) {
                     href={liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white shadow-lg shadow-indigo-500/25 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                    className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white shadow-lg shadow-indigo-500/25 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 w-full sm:w-auto"
                     aria-label={`Open ${project.title} live demo`}
                   >
                     <FiExternalLink className="text-base transition-transform group-hover:scale-110" aria-hidden="true" />

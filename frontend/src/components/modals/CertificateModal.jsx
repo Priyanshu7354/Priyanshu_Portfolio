@@ -23,7 +23,7 @@ export default function CertificateModal({ cert, onClose }) {
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
   }, [cert, onClose]);
 
@@ -103,7 +103,7 @@ export default function CertificateModal({ cert, onClose }) {
             </div>
 
             {/* FOOTER ACTION FALLBACK */}
-            <div className="px-6 py-3 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+            <div className="px-4 sm:px-6 py-3 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-gray-500 dark:text-gray-400">
               <span>Having trouble viewing the PDF frame?</span>
               <a
                 href={cert.src}

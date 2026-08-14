@@ -13,7 +13,7 @@ export default function Resume() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="rounded-3xl bg-gradient-to-r from-indigo-900/50 via-violet-900/40 to-purple-900/50 dark:from-indigo-950/70 dark:via-violet-950/60 dark:to-purple-950/70 border border-indigo-500/20 dark:border-indigo-400/20 backdrop-blur-xl p-8 sm:p-10 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+        className="rounded-3xl bg-gradient-to-r from-indigo-900/50 via-violet-900/40 to-purple-900/50 dark:from-indigo-950/70 dark:via-violet-950/60 dark:to-purple-950/70 border border-indigo-500/20 dark:border-indigo-400/20 backdrop-blur-xl p-6 sm:p-10 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
       >
         {/* Ambient Glow */}
         <div
@@ -37,7 +37,7 @@ export default function Resume() {
           <a
             href={resumeUrl}
             download="Priyanshu_Bhatnagar_Resume.pdf"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white shadow-lg shadow-indigo-500/30 hover:scale-105 active:scale-95 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white shadow-lg shadow-indigo-500/30 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
           >
             <FiDownload className="text-base" /> Download Resume
           </a>
@@ -46,7 +46,7 @@ export default function Resume() {
             href={resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-white/10 dark:bg-white/[0.08] backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-105 active:scale-95 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-white/10 dark:bg-white/[0.08] backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
           >
             <FiEye className="text-base" /> Preview Resume
           </a>

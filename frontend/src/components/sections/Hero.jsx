@@ -281,9 +281,11 @@ export default function Hero({ profilePic }) {
         >
           {/* Professional Badge */}
           <motion.div variants={fadeUp} className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 dark:border-indigo-400/20">
-              <FaJava className="text-sm" aria-hidden="true" />
-              Java Backend Developer | 3.2 Years Experience
+            <span className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 dark:border-indigo-400/20 max-w-full flex-wrap">
+              <FaJava className="text-sm shrink-0" aria-hidden="true" />
+              <span>Java Backend Developer</span>
+              <span className="hidden xs:inline">|</span>
+              <span>3.2 Years Experience</span>
             </span>
           </motion.div>
 
@@ -415,7 +417,7 @@ export default function Hero({ profilePic }) {
           </motion.div>
 
           {/* Statistics Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3 mt-6 w-full max-w-md lg:max-w-none">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3 mt-6 w-full max-w-md lg:max-w-none">
             {STATS_CARDS.map((card, i) => (
               <StatCard key={card.label} {...card} index={i} />
             ))}

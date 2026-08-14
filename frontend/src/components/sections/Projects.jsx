@@ -139,7 +139,7 @@ function FilterTab({ label, isActive, onClick }) {
       onClick={onClick}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
-      className={`relative px-5 py-2.5 rounded-xl text-sm font-semibold
+      className={`relative px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold shrink-0 whitespace-nowrap
         transition-colors duration-200
         focus-visible:outline-none focus-visible:ring-2
         focus-visible:ring-indigo-500 focus-visible:ring-offset-2
