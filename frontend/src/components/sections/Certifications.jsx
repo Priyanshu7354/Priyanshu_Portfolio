@@ -5,13 +5,13 @@ import { FiAward, FiEye } from "react-icons/fi";
 
 export default function Certifications({ certificates, setActiveCertificate }) {
   return (
-    <section id="certifications" className="relative mt-24 py-4" aria-label="Certifications">
+    <section id="certifications" className="relative mt-12 sm:mt-20 lg:mt-24 py-2 sm:py-4" aria-label="Certifications">
       {/* Section Header */}
-      <div className="mb-10 space-y-4">
+      <div className="mb-8 sm:mb-10 space-y-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3"
         >

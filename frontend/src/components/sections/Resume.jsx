@@ -7,11 +7,11 @@ export default function Resume() {
   const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
 
   return (
-    <section id="resume" className="relative mt-24 py-4" aria-label="Resume">
+    <section id="resume" className="relative mt-12 sm:mt-20 lg:mt-24 py-2 sm:py-4" aria-label="Resume">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.5 }}
         className="rounded-3xl bg-gradient-to-r from-indigo-900/50 via-violet-900/40 to-purple-900/50 dark:from-indigo-950/70 dark:via-violet-950/60 dark:to-purple-950/70 border border-indigo-500/20 dark:border-indigo-400/20 backdrop-blur-xl p-6 sm:p-10 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
       >

@@ -393,7 +393,7 @@ export default function Contact() {
     <FadeInWhenVisible delay={0.4}>
       <section
         id="contact"
-        className="mt-24 space-y-20"
+        className="mt-12 sm:mt-20 lg:mt-24 space-y-12 sm:space-y-20"
         aria-label="Contact"
       >
 
