@@ -1,19 +1,23 @@
-import { defineConfig } from "vite"
-import react from "@vitejs/plugin-react"
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Priyanshu_Portfolio/',   // repo name
+
+  // Required for GitHub Pages project site
+  base: '/Priyanshu_Portfolio/',
+
+  // Only active during development (npm run dev)
   server: {
     proxy: {
-      "/api": {
-        target: "http://localhost:5000",
+      '/api': {
+        target: 'http://localhost:5000',
         changeOrigin: true,
-        secure: false
-      }
-    }
+        secure: false,
+      },
+    },
   },
-  build: {
-    outDir: "dist"
-  }
+
+  // You can remove build: { outDir: "dist" } — it's the default
 })

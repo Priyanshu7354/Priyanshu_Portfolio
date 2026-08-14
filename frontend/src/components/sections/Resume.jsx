@@ -1,48 +1,57 @@
 // frontend/src/components/sections/Resume.jsx
 import React from "react";
+import { motion } from "framer-motion";
+import { FiDownload, FiEye, FiFileText } from "react-icons/fi";
 
 export default function Resume() {
+  const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
+
   return (
-    <section id="resume" className="mt-20">
-      <div className="
-        bg-white dark:bg-gray-800 p-4 rounded-xl shadow flex flex-col transition-all
-        hover:shadow-xl
-        hover:drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]
-        dark:hover:drop-shadow-[0_0_20px_rgba(129,140,248,0.7)]
-        hover:-translate-y-1
-      ">
-        <h2 className="text-3xl font-bold mb-4 text-indigo-400">
-          Resume
-        </h2>
-       <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-xl">
-          Download or view my latest resume to learn more about my
-          experience, skills, and projects.
-        </p>
-        <div className="flex gap-4">
+    <section id="resume" className="relative mt-24 py-4" aria-label="Resume">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="rounded-3xl bg-gradient-to-r from-indigo-900/50 via-violet-900/40 to-purple-900/50 dark:from-indigo-950/70 dark:via-violet-950/60 dark:to-purple-950/70 border border-indigo-500/20 dark:border-indigo-400/20 backdrop-blur-xl p-8 sm:p-10 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+      >
+        {/* Ambient Glow */}
+        <div
+          className="absolute -bottom-10 -left-10 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl"
+          aria-hidden="true"
+        />
+
+        <div className="space-y-3 max-w-xl relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+            <FiFileText /> Curriculum Vitae
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Ready to review my experience?
+          </h2>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            Download or view my detailed resume to review my full professional experience, technical competencies, Spring Boot project architectures, and education background.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3.5 w-full md:w-auto relative z-10">
           <a
-           href={`${import.meta.env.BASE_URL}Priyanshu.pdf`}
-            download
-            className="
-              px-6 py-3 bg-indigo-600 text-white rounded-lg shadow
-              transition-all duration-300
-              hover:scale-105 hover:shadow-xl
-            "
+            href={resumeUrl}
+            download="Priyanshu_Bhatnagar_Resume.pdf"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white shadow-lg shadow-indigo-500/30 hover:scale-105 active:scale-95 transition-all"
           >
-            📄 Download Resume
+            <FiDownload className="text-base" /> Download Resume
           </a>
+
           <a
-            href={`${import.meta.env.BASE_URL}Priyanshu.pdf`}
+            href={resumeUrl}
             target="_blank"
-            className="
-              px-6 py-3 bg-gray-200 dark:bg-gray-700 rounded-lg shadow
-              transition-all duration-300
-              hover:scale-105 hover:shadow-xl
-            "
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-white/10 dark:bg-white/[0.08] backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-105 active:scale-95 transition-all"
           >
-            👀 View Resume
+            <FiEye className="text-base" /> Preview Resume
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

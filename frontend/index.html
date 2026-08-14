@@ -1,27 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Priyanshu Portfolio</title>
     
+    <!-- Inline Theme Script (Prevents FOUC on Reload) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (saved === 'dark' || (!saved && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>Priyanshu Bhatnagar — Java Backend Developer | 3.2 Yrs Exp | Spring Boot & Microservices</title>
+    <meta name="title" content="Priyanshu Bhatnagar — Java Backend Developer | 3.2 Yrs Exp | Spring Boot & Microservices" />
+    <meta name="description" content="Portfolio of Priyanshu Bhatnagar, Java Backend Developer with 3.2 years of experience at iSteer Technologies. Specializing in Spring Boot, Spring Cloud Microservices, REST APIs, Kafka, Redis, and MySQL." />
+    <meta name="keywords" content="Priyanshu Bhatnagar, Java Developer, Java Backend Developer, Spring Boot Developer, Microservices Developer, iSteer Technologies, Spring Security, Kafka, Redis, REST API, MySQL, Java 17, Portfolio" />
+    <meta name="author" content="Priyanshu Bhatnagar" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://priyanshu7354.github.io/Priyanshu_Portfolio/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://priyanshu7354.github.io/Priyanshu_Portfolio/" />
+    <meta property="og:title" content="Priyanshu Bhatnagar — Java Backend Developer | 3.2 Yrs Experience" />
+    <meta property="og:description" content="Engineering secure, scalable backend microservices and RESTful APIs with Java, Spring Boot, Spring Security, Kafka, Redis, and MySQL." />
+    <meta property="og:image" content="https://priyanshu7354.github.io/Priyanshu_Portfolio/profile5.png" />
+
+    <!-- Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://priyanshu7354.github.io/Priyanshu_Portfolio/" />
+    <meta property="twitter:title" content="Priyanshu Bhatnagar — Java Backend Developer | 3.2 Yrs Experience" />
+    <meta property="twitter:description" content="Engineering secure, scalable backend microservices and RESTful APIs with Java, Spring Boot, Spring Security, Kafka, Redis, and MySQL." />
+    <meta property="twitter:image" content="https://priyanshu7354.github.io/Priyanshu_Portfolio/profile5.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Priyanshu Bhatnagar",
+        "jobTitle": "Java Backend Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "iSteer Technologies"
+        },
+        "url": "https://priyanshu7354.github.io/Priyanshu_Portfolio/",
+        "sameAs": [
+          "https://github.com/Priyanshu7354",
+          "https://www.linkedin.com/in/priyanshu-bhatnagar45/",
+          "https://leetcode.com/u/pbhatnagar631/",
+          "https://auth.geeksforgeeks.org/user/pbhatnagar"
+        ],
+        "knowsAbout": [
+          "Java",
+          "Java 8",
+          "Java 17",
+          "Spring Boot",
+          "Spring MVC",
+          "Spring Security",
+          "Spring Data JPA",
+          "Hibernate",
+          "Microservices",
+          "Domain-Driven Design",
+          "Event-Driven Architecture",
+          "Apache Kafka",
+          "Redis",
+          "RESTful APIs",
+          "MySQL",
+          "AWS",
+          "Docker",
+          "Maven",
+          "Git"
+        ]
+      }
+    </script>
   </head>
-  <body>
-
-    <!-- ✅ NETLIFY STATIC FORM (REQUIRED) -->
-    <form
-      name="contact"
-      netlify
-      netlify-honeypot="bot-field"
-      hidden
-    >
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
-
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
     <div id="root"></div>
-
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
