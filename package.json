@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "build": "npm --prefix frontend run build",
+    "deploy": "npm --prefix frontend run deploy"
+  },
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
 }
+
