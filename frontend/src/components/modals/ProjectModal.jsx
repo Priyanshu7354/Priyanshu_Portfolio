@@ -71,28 +71,28 @@ const DETAIL_SECTIONS = [
     label: "Key Architectural Features",
     icon: FiList,
     accent: "from-emerald-500 to-teal-500",
-    accentText: "text-emerald-600 dark:text-emerald-400",
+    accentText: "text-emerald-700 dark:text-emerald-400",
   },
   {
     key: "challenges",
     label: "Engineering Challenges & Solutions",
     icon: FiAlertTriangle,
     accent: "from-amber-500 to-orange-500",
-    accentText: "text-amber-600 dark:text-amber-400",
+    accentText: "text-amber-700 dark:text-amber-400",
   },
   {
     key: "learnings",
     label: "Key Technical Insights",
     icon: FiAward,
     accent: "from-blue-500 to-indigo-500",
-    accentText: "text-blue-600 dark:text-blue-400",
+    accentText: "text-blue-700 dark:text-blue-400",
   },
   {
     key: "improvements",
     label: "Future Architectural Roadmap",
     icon: FiTrendingUp,
     accent: "from-violet-500 to-purple-500",
-    accentText: "text-violet-600 dark:text-violet-400",
+    accentText: "text-violet-700 dark:text-violet-400",
   },
 ];
 
@@ -121,7 +121,7 @@ function DetailSection({ section, items }) {
               className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-gradient-to-br ${section.accent}`}
               aria-hidden="true"
             />
-            <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 group-hover/item:text-gray-800 dark:group-hover/item:text-gray-200 transition-colors">
+            <span className="text-sm leading-relaxed text-slate-700 dark:text-gray-400 group-hover/item:text-slate-900 dark:group-hover/item:text-gray-200 transition-colors">
               {item}
             </span>
           </li>
@@ -140,7 +140,7 @@ function ModulesSection({ modules }) {
         <div className="p-1.5 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500">
           <FiGrid className="text-sm text-white" aria-hidden="true" />
         </div>
-        <h4 className="text-sm font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+        <h4 className="text-sm font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
           Decoupled Microservice Modules
         </h4>
       </div>
@@ -149,15 +149,15 @@ function ModulesSection({ modules }) {
         {modules.map((mod, idx) => (
           <div
             key={idx}
-            className="p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-200/70 dark:border-white/[0.06] space-y-1.5"
+            className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/[0.06] space-y-1.5"
           >
             <div className="flex items-center gap-2">
-              <FiCheckCircle className="text-emerald-500 text-sm shrink-0" />
-              <h5 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">
+              <FiCheckCircle className="text-emerald-600 dark:text-emerald-500 text-sm shrink-0" />
+              <h5 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
                 {mod.name}
               </h5>
             </div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed pl-5">
+            <p className="text-xs text-slate-700 dark:text-gray-400 leading-relaxed pl-5">
               {mod.description}
             </p>
           </div>
@@ -191,11 +191,11 @@ function ScreenshotGallery({ screenshots, title }) {
           <div className="p-1.5 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500">
             <FiImage className="text-sm text-white" aria-hidden="true" />
           </div>
-          <h4 className="text-sm font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+          <h4 className="text-sm font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
             Screenshots
           </h4>
           {screenshots.length > 1 && (
-            <span className="text-xs font-medium text-gray-400 dark:text-gray-500 tabular-nums">
+            <span className="text-xs font-medium text-slate-500 dark:text-gray-500 tabular-nums">
               {activeIndex + 1} / {screenshots.length}
             </span>
           )}
@@ -205,14 +205,14 @@ function ScreenshotGallery({ screenshots, title }) {
           <div className="flex items-center gap-1">
             <button
               onClick={goPrev}
-              className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-white/[0.08] transition-colors"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-gray-200 hover:bg-slate-100 dark:hover:bg-white/[0.08] transition-colors"
               aria-label="Previous screenshot"
             >
               <FiChevronLeft className="text-base" />
             </button>
             <button
               onClick={goNext}
-              className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-white/[0.08] transition-colors"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-gray-200 hover:bg-slate-100 dark:hover:bg-white/[0.08] transition-colors"
               aria-label="Next screenshot"
             >
               <FiChevronRight className="text-base" />
@@ -221,7 +221,7 @@ function ScreenshotGallery({ screenshots, title }) {
         )}
       </div>
 
-      <div className="relative rounded-xl overflow-hidden bg-gray-100 dark:bg-white/[0.04] border border-gray-200 dark:border-white/[0.08]">
+      <div className="relative rounded-xl overflow-hidden bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08]">
         <img
           src={screenshots[activeIndex]}
           alt={`${title} screenshot ${activeIndex + 1}`}
@@ -323,12 +323,12 @@ export default function ProjectModal({ project, onClose }) {
             onClick={(e) => e.stopPropagation()}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            className="relative w-full max-w-3xl max-h-[92vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl border border-gray-200/60 dark:border-white/[0.08] shadow-2xl focus:outline-none"
+            className="relative w-full max-w-3xl max-h-[92vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-white/[0.08] shadow-2xl shadow-slate-900/20 dark:shadow-2xl focus:outline-none"
           >
             {/* Close button */}
             <button
               onClick={onClose}
-              className="sticky top-3 float-right mr-3 sm:mr-4 z-20 p-2 sm:p-2.5 rounded-xl bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-white/[0.1] backdrop-blur-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.1] shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              className="sticky top-3 float-right mr-3 sm:mr-4 z-20 p-2 sm:p-2.5 rounded-xl bg-white/90 dark:bg-gray-800/80 border border-slate-200 dark:border-white/[0.1] backdrop-blur-sm text-slate-600 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.1] shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
               aria-label="Close project details"
             >
               <FiX className="text-lg" />
@@ -348,13 +348,13 @@ export default function ProjectModal({ project, onClose }) {
                     {project.category}
                   </span>
                   {project.architecturePattern && (
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-500/30">
                       <FiLayers /> {project.architecturePattern}
                     </span>
                   )}
                 </div>
 
-                <h2 id="project-modal-title" className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                <h2 id="project-modal-title" className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                   {project.title}
                 </h2>
               </motion.div>
@@ -365,11 +365,11 @@ export default function ProjectModal({ project, onClose }) {
                   <div className="p-1.5 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500">
                     <FiBookOpen className="text-sm text-white" aria-hidden="true" />
                   </div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
                     System Overview & Business Context
                   </h4>
                 </div>
-                <p className="text-sm sm:text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                <p className="text-sm sm:text-base leading-relaxed text-slate-700 dark:text-gray-400">
                   {project.description}
                 </p>
               </motion.div>
@@ -383,7 +383,7 @@ export default function ProjectModal({ project, onClose }) {
                   <div className="p-1.5 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500">
                     <FiCpu className="text-sm text-white" aria-hidden="true" />
                   </div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-cyan-700 dark:text-cyan-400">
                     Technology Stack & Libraries
                   </h4>
                 </div>
@@ -409,7 +409,7 @@ export default function ProjectModal({ project, onClose }) {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 shadow-lg shadow-gray-900/10 dark:shadow-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 w-full sm:w-auto"
+                    className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 shadow-lg shadow-slate-900/10 dark:shadow-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 w-full sm:w-auto"
                     aria-label={`View ${project.title} source code on GitHub`}
                   >
                     <FiGithub className="text-base transition-transform group-hover:scale-110" aria-hidden="true" />
@@ -418,7 +418,7 @@ export default function ProjectModal({ project, onClose }) {
                 )}
 
                 {project.githubNote && !project.github && (
-                  <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/[0.06] px-4 py-2.5 rounded-xl border border-gray-200 dark:border-white/[0.08] text-center w-full sm:w-auto">
+                  <span className="text-xs font-semibold text-slate-600 dark:text-gray-400 bg-slate-100 dark:bg-white/[0.06] px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/[0.08] text-center w-full sm:w-auto">
                     ℹ️ {project.githubNote}
                   </span>
                 )}
@@ -438,7 +438,7 @@ export default function ProjectModal({ project, onClose }) {
               </motion.div>
 
               {/* Mobile hint */}
-              <p className="text-xs text-center text-gray-400 dark:text-gray-500 mt-1 md:hidden">
+              <p className="text-xs text-center text-slate-400 dark:text-gray-500 mt-1 md:hidden">
                 Swipe down to close
               </p>
             </motion.div>

@@ -35,24 +35,24 @@ import {
    TECH ICON MAP — maps tech-string → { icon, color }
    ────────────────────────────────────────────────────────────────────── */
 const TECH_ICON_MAP = {
-  Java: { icon: FaJava, color: "text-orange-500" },
-  "Java 8 / 17": { icon: FaJava, color: "text-orange-500" },
-  "Spring Boot": { icon: SiSpringboot, color: "text-green-500" },
-  "Spring Security": { icon: SiSpringsecurity, color: "text-green-600" },
-  Hibernate: { icon: SiHibernate, color: "text-amber-600" },
-  Microservices: { icon: FaCubes, color: "text-indigo-500" },
-  Kafka: { icon: SiApachekafka, color: "text-purple-500" },
-  "Apache Kafka": { icon: SiApachekafka, color: "text-purple-500" },
-  Redis: { icon: SiRedis, color: "text-red-500" },
-  MySQL: { icon: SiMysql, color: "text-sky-600" },
-  React: { icon: FaReact, color: "text-cyan-400" },
-  "Node.js": { icon: FaNodeJs, color: "text-green-600" },
-  Express: { icon: SiExpress, color: "text-gray-500" },
-  MongoDB: { icon: SiMongodb, color: "text-green-500" },
-  "Socket.io": { icon: SiSocketdotio, color: "text-gray-700 dark:text-gray-300" },
-  Docker: { icon: FaDocker, color: "text-blue-400" },
-  AWS: { icon: FaAws, color: "text-amber-500" },
-  Git: { icon: FaGitAlt, color: "text-red-500" },
+  Java: { icon: FaJava, color: "text-orange-600 dark:text-orange-500" },
+  "Java 8 / 17": { icon: FaJava, color: "text-orange-600 dark:text-orange-500" },
+  "Spring Boot": { icon: SiSpringboot, color: "text-emerald-600 dark:text-green-500" },
+  "Spring Security": { icon: SiSpringsecurity, color: "text-emerald-600 dark:text-green-500" },
+  Hibernate: { icon: SiHibernate, color: "text-amber-700 dark:text-amber-600" },
+  Microservices: { icon: FaCubes, color: "text-indigo-600 dark:text-indigo-400" },
+  Kafka: { icon: SiApachekafka, color: "text-purple-600 dark:text-purple-400" },
+  "Apache Kafka": { icon: SiApachekafka, color: "text-purple-600 dark:text-purple-400" },
+  Redis: { icon: SiRedis, color: "text-red-600 dark:text-red-500" },
+  MySQL: { icon: SiMysql, color: "text-sky-700 dark:text-sky-400" },
+  React: { icon: FaReact, color: "text-cyan-600 dark:text-cyan-400" },
+  "Node.js": { icon: FaNodeJs, color: "text-emerald-600 dark:text-green-600" },
+  Express: { icon: SiExpress, color: "text-slate-700 dark:text-gray-400" },
+  MongoDB: { icon: SiMongodb, color: "text-emerald-600 dark:text-green-500" },
+  "Socket.io": { icon: SiSocketdotio, color: "text-slate-800 dark:text-gray-300" },
+  Docker: { icon: FaDocker, color: "text-blue-600 dark:text-blue-400" },
+  AWS: { icon: FaAws, color: "text-amber-600 dark:text-amber-500" },
+  Git: { icon: FaGitAlt, color: "text-red-600 dark:text-red-500" },
 };
 
 /* ──────────────────────────────────────────────────────────────────────
@@ -62,8 +62,8 @@ const FILTER_CATEGORIES = ["All", "Java Microservices", "Full Stack"];
 
 /** Category badge accent colors */
 export const CATEGORY_COLORS = {
-  "Java Microservices": "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-  "Full Stack": "bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20",
+  "Java Microservices": "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/30",
+  "Full Stack": "bg-violet-500/10 text-violet-700 dark:text-violet-400 border-violet-500/30",
 };
 
 /* ──────────────────────────────────────────────────────────────────────
@@ -99,7 +99,7 @@ const cardVariants = {
 export function TechChip({ name, size = "sm" }) {
   const tech = TECH_ICON_MAP[name];
   const Icon = tech?.icon;
-  const colorClass = tech?.color || "text-gray-500";
+  const colorClass = tech?.color || "text-slate-600 dark:text-gray-400";
 
   const sizeClasses =
     size === "sm"
@@ -109,10 +109,10 @@ export function TechChip({ name, size = "sm" }) {
   return (
     <span
       className={`inline-flex items-center ${sizeClasses} rounded-lg
-        bg-gray-100/80 dark:bg-white/[0.06]
-        border border-gray-200/60 dark:border-white/[0.08]
-        text-gray-600 dark:text-gray-300
-        font-medium whitespace-nowrap`}
+        bg-slate-100 dark:bg-white/[0.06]
+        border border-slate-200/90 dark:border-white/[0.08]
+        text-slate-800 dark:text-gray-300
+        font-semibold whitespace-nowrap`}
     >
       {Icon && <Icon className={`${colorClass} text-sm`} aria-hidden="true" />}
       {name}
@@ -121,7 +121,7 @@ export function TechChip({ name, size = "sm" }) {
 }
 
 function CategoryBadge({ category }) {
-  const colors = CATEGORY_COLORS[category] || "bg-indigo-500/10 text-indigo-600 border-indigo-500/20";
+  const colors = CATEGORY_COLORS[category] || "bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border-indigo-500/30";
   return (
     <span
       className={`inline-flex items-center px-2.5 py-1 rounded-md
@@ -147,7 +147,7 @@ function FilterTab({ label, isActive, onClick }) {
         ${
           isActive
             ? "text-white"
-            : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.06]"
+            : "text-slate-700 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/[0.06]"
         }`}
       role="tab"
       aria-selected={isActive}
@@ -167,24 +167,28 @@ function FilterTab({ label, isActive, onClick }) {
   );
 }
 
-function PlaceholderThumbnail({ title, featured }) {
+function PlaceholderThumbnail({ project, featured }) {
+  const title = project?.title || "Project";
+  const subtitle =
+    project?.architecturePattern || project?.tagline || "Software Architecture & Design";
+
   return (
     <div
       className={`w-full ${featured ? "h-52 sm:h-60" : "h-40 sm:h-44"}
         rounded-xl overflow-hidden
-        bg-gradient-to-br from-indigo-900/40 via-violet-900/30 to-purple-900/40
+        bg-gradient-to-br from-indigo-100/90 via-violet-50 to-purple-100/80
         dark:from-indigo-950/70 dark:via-violet-950/60 dark:to-purple-950/70
-        border border-indigo-500/20
+        border border-indigo-200/80 dark:border-indigo-500/20
         flex flex-col items-center justify-center p-6 text-center relative`}
     >
-      <div className="w-12 h-12 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-300 mb-3">
+      <div className="w-12 h-12 rounded-xl bg-indigo-600/15 dark:bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-700 dark:text-indigo-300 mb-3 shadow-sm">
         <FaCubes className="text-2xl" />
       </div>
-      <h4 className="text-lg font-bold text-white tracking-tight leading-snug">
+      <h4 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight leading-snug">
         {title}
       </h4>
-      <p className="text-xs text-indigo-200/80 mt-1 max-w-sm">
-        Microservices Architecture • DDD • Event Streaming
+      <p className="text-xs font-semibold text-indigo-900/80 dark:text-indigo-200/80 mt-1 max-w-sm">
+        {subtitle}
       </p>
     </div>
   );
@@ -212,12 +216,11 @@ function ProjectCard({ project, onSelect, featured }) {
       onKeyDown={handleKeyDown}
       whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
       className={`group relative cursor-pointer rounded-2xl
-        bg-white/80 dark:bg-white/[0.04]
-        border border-gray-200/60 dark:border-white/[0.07]
-        backdrop-blur-sm shadow-sm
-        hover:shadow-lg hover:shadow-indigo-500/10
-        dark:hover:shadow-indigo-500/5
-        hover:border-indigo-300/60 dark:hover:border-indigo-500/30
+        bg-white dark:bg-white/[0.04]
+        border border-slate-200/80 dark:border-white/[0.07]
+        shadow-sm shadow-slate-200/60 dark:shadow-none
+        hover:shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-500/5
+        hover:border-indigo-400/60 dark:hover:border-indigo-500/30
         transition-all duration-300 ease-out
         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500
         ${featured ? "sm:col-span-2 lg:col-span-2" : ""}`}
@@ -228,8 +231,9 @@ function ProjectCard({ project, onSelect, featured }) {
         <div
           className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5
             px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider
-            bg-gradient-to-r from-emerald-500 to-teal-500 text-white
-            shadow-lg shadow-emerald-500/25"
+            bg-gradient-to-r from-emerald-600 to-teal-600 text-white
+            border border-emerald-400/30 shadow-md shadow-emerald-600/20
+            dark:from-emerald-500 dark:to-teal-500 dark:shadow-emerald-500/25"
           aria-label="Flagship Microservices Project"
         >
           <FiStar className="text-xs" aria-hidden="true" />
@@ -249,7 +253,7 @@ function ProjectCard({ project, onSelect, featured }) {
             />
           </div>
         ) : (
-          <PlaceholderThumbnail title={project.title} featured={featured} />
+          <PlaceholderThumbnail project={project} featured={featured} />
         )}
       </div>
 
@@ -257,7 +261,7 @@ function ProjectCard({ project, onSelect, featured }) {
       <div className="p-5 pt-4 space-y-3">
         <div className="flex items-start justify-between gap-3">
           <div className="space-y-1 min-w-0">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white truncate group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white truncate group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
               {project.title}
             </h3>
             <CategoryBadge category={project.category} />
@@ -271,7 +275,7 @@ function ProjectCard({ project, onSelect, featured }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="p-2 rounded-lg text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.08] transition-colors"
+                className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.08] transition-colors"
                 aria-label={`View ${project.title} GitHub repository`}
               >
                 <FiGithub className="text-base" />
@@ -280,7 +284,7 @@ function ProjectCard({ project, onSelect, featured }) {
           </div>
         </div>
 
-        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">
+        <p className="text-xs sm:text-sm text-slate-700 dark:text-gray-400 line-clamp-2 leading-relaxed">
           {project.tagline}
         </p>
 
@@ -290,19 +294,19 @@ function ProjectCard({ project, onSelect, featured }) {
             <TechChip key={techName} name={techName} size="sm" />
           ))}
           {project.tech.length > (featured ? 8 : 4) && (
-            <span className="text-[11px] px-2 py-0.5 rounded-lg bg-gray-100 dark:bg-white/[0.06] text-gray-500 font-medium">
+            <span className="text-[11px] px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-white/[0.06] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-gray-400 font-semibold">
               +{project.tech.length - (featured ? 8 : 4)} more
             </span>
           )}
         </div>
 
         {/* View Details Link */}
-        <div className="pt-2 flex items-center justify-between border-t border-gray-100 dark:border-white/[0.06]">
-          <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 group-hover:underline inline-flex items-center gap-1">
+        <div className="pt-2 flex items-center justify-between border-t border-slate-200/80 dark:border-white/[0.06]">
+          <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 group-hover:underline inline-flex items-center gap-1">
             View Architecture & Details <FiArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
           </span>
           {project.duration && (
-            <span className="text-[11px] font-medium text-gray-400 dark:text-gray-500">
+            <span className="text-[11px] font-semibold text-slate-500 dark:text-gray-500">
               {project.duration}
             </span>
           )}
@@ -331,7 +335,7 @@ export default function Projects({ projectsData, setActiveProject }) {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3"
         >
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 dark:border-indigo-400/20">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-500/20 dark:border-indigo-400/20">
             Featured Work
           </span>
         </motion.div>
@@ -341,10 +345,10 @@ export default function Projects({ projectsData, setActiveProject }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white"
+          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white"
         >
           Java Backend &{" "}
-          <span className="bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-indigo-500 dark:to-violet-500 bg-clip-text text-transparent">
             Microservices Projects
           </span>
         </motion.h2>
@@ -354,7 +358,7 @@ export default function Projects({ projectsData, setActiveProject }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="text-base text-gray-500 dark:text-gray-400 max-w-2xl"
+          className="text-base text-slate-600 dark:text-gray-400 max-w-2xl font-normal"
         >
           Explore flagship Java microservices platforms and supporting full-stack software applications.
         </motion.p>
