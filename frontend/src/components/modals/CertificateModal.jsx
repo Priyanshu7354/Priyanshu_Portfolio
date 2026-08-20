@@ -2,17 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiX, FiExternalLink, FiDownload, FiFileText } from "react-icons/fi";
-
-const BASE_URL = import.meta.env.BASE_URL || "/";
-
-function resolveAssetUrl(path) {
-  if (!path) return "";
-  if (path.startsWith("http://") || path.startsWith("https://")) return path;
-  if (BASE_URL !== "/" && path.startsWith(BASE_URL)) return path;
-  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
-  const cleanBase = BASE_URL.endsWith("/") ? BASE_URL : `${BASE_URL}/`;
-  return `${cleanBase}${cleanPath}`;
-}
+import { getAssetUrl } from "../../data/certificates";
 
 export default function CertificateModal({ cert, onClose }) {
   const modalRef = useRef(null);
@@ -52,7 +42,8 @@ export default function CertificateModal({ cert, onClose }) {
 
   if (!cert) return null;
 
-  const pdfUrl = resolveAssetUrl(cert.src);
+  // Fully qualified absolute URL for PDF
+  const pdfUrl = getAssetUrl(cert.src || `certificates/${cert.fileName}`);
 
   return (
     <AnimatePresence>
@@ -98,7 +89,7 @@ export default function CertificateModal({ cert, onClose }) {
                   href={pdfUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition border border-indigo-200/60 dark:border-indigo-500/20"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-100 dark:hover:bg-indigo-500/20 transition border border-indigo-200/60 dark:border-indigo-500/20 shadow-sm"
                   aria-label="Open PDF in new tab"
                 >
                   <FiExternalLink /> <span className="hidden sm:inline">Open PDF</span>
@@ -113,19 +104,39 @@ export default function CertificateModal({ cert, onClose }) {
               </div>
             </div>
 
-            {/* CONTENT FRAME */}
+            {/* CONTENT FRAME WITH EMBED/IFRAME FALLBACK */}
             <div className="p-3 sm:p-4 flex-1 h-[65vh] bg-slate-100 dark:bg-gray-950 flex flex-col">
-              <iframe
-                src={pdfUrl}
-                title={cert.title}
+              <object
+                data={pdfUrl}
+                type="application/pdf"
                 className="w-full h-full rounded-xl border border-slate-200/80 dark:border-gray-800 bg-white"
-              />
+              >
+                <iframe
+                  src={pdfUrl}
+                  title={cert.title}
+                  className="w-full h-full rounded-xl border border-slate-200/80 dark:border-gray-800 bg-white"
+                >
+                  <div className="p-8 text-center flex flex-col items-center justify-center h-full space-y-4">
+                    <p className="text-sm font-semibold text-slate-700 dark:text-gray-300">
+                      Your browser does not support inline PDF previewing.
+                    </p>
+                    <a
+                      href={pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-md hover:bg-indigo-700 transition"
+                    >
+                      Click here to view PDF directly
+                    </a>
+                  </div>
+                </iframe>
+              </object>
             </div>
 
             {/* FOOTER ACTION FALLBACK */}
             <div className="px-5 py-3 border-t border-slate-200/80 dark:border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs bg-slate-50 dark:bg-gray-900/80 text-slate-600 dark:text-gray-400">
               <span className="font-medium">Verified PDF Document</span>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <a
                   href={pdfUrl}
                   target="_blank"
@@ -136,7 +147,7 @@ export default function CertificateModal({ cert, onClose }) {
                 </a>
                 <a
                   href={pdfUrl}
-                  download
+                  download={cert.fileName || "certificate.pdf"}
                   className="inline-flex items-center gap-1 font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
                 >
                   <FiDownload /> Download Certificate
@@ -149,4 +160,5 @@ export default function CertificateModal({ cert, onClose }) {
     </AnimatePresence>
   );
 }
+
 
